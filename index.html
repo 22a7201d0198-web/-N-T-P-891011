@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Học tiếng Trung · Bài 8–11</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f3fbf7;--card:#fff;--ink:#33423d;--mut:#7f9690;--pri:#5fbf9f;--pri2:#bfe9d8;--pink:#fbcfe8;--mint:#c9f2de;--peach:#fde2c3;--sky:#c7e6fb;--lav:#ddd3fb;--line:#d8eee4;--ok:#4ade80;--bad:#fb7185}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16211d;--card:#21302a;--ink:#e9f6ef;--mut:#9fb8ae;--line:#34493f;--pink:#6b3a58;--mint:#2f5a45;--peach:#6b4a2f;--sky:#2f4f66;--lav:#453a6b;--pri2:#2f5a45}}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+header{background:linear-gradient(120deg,var(--mint),var(--sky),var(--lav));padding:20px 16px 16px;text-align:center;color:#2d3a4a}
+header h1{margin:0;font-size:1.35rem}header p{margin:4px 0 0;font-size:.85rem}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 13px;border-radius:999px;font-size:.85rem;cursor:pointer}
+nav button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+main{max-width:720px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 6px 18px rgba(95,191,159,.15)}
+.han{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+input.s{width:100%;padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1rem;margin-bottom:10px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}
+th{background:var(--pri2);color:#2d3a4a;padding:8px;font-size:.8rem;text-align:left}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:nth-child(even) td{background:rgba(95,191,159,.07)}
+td.h{font-size:1.5rem;font-weight:600}td.p{color:var(--pri);font-weight:600}
+.sp{border:0;background:var(--peach);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem}
+.btn{border:0;background:var(--pri);color:#fff;padding:10px 18px;border-radius:14px;font-size:.95rem;cursor:pointer}
+.btn.g{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap;align-items:center}
+.fc{perspective:900px;height:260px;cursor:pointer}
+.fi{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.f .fi{transform:rotateY(180deg)}
+.fs{position:absolute;inset:0;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px}
+.fs.a{background:linear-gradient(135deg,var(--card),var(--peach));border:2px solid var(--peach)}
+.fs.b{background:linear-gradient(135deg,var(--lav),var(--sky));color:#2d3a4a;transform:rotateY(180deg)}
+.big{font-size:4rem;font-weight:700}
+.stat{display:flex;justify-content:space-between;font-size:.85rem;color:var(--mut);margin-bottom:10px}
+.q{text-align:center;padding:14px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.opt{padding:14px 8px;border-radius:16px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.05rem;cursor:pointer;min-height:56px}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.no{background:var(--bad);color:#fff;border-color:var(--bad)}
+.zone{min-height:64px;border:2px dashed var(--pri);border-radius:16px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tk{padding:8px 14px;border-radius:12px;background:var(--sky);border:0;color:#24404f;font-size:1.4rem;cursor:pointer}
+.zone .tk{background:var(--peach);color:#4a3320}
+.msg{text-align:center;min-height:26px;font-weight:600;margin-top:8px}
+.ref{background:var(--peach);color:#4a3320;border-radius:14px;padding:10px;margin-top:8px;font-weight:500}
+.mut{color:var(--mut)}
+</style>
+</head>
+<body>
+<header><h1>学汉语 · Bài 8–11</h1><p>Từ vựng mới · bấm 🔊 để nghe đọc mẫu</p></header>
+<nav id="nav"></nav>
+<main id="v"></main>
+<script>
+const D=`点|diǎn|giờ (chỉ giờ), chấm
+分(钟)|fēn(zhōng)|phút
+半|bàn|rưỡi, một nửa
+飞机|fēijī|máy bay
+开会|kāihuì|họp
+小时|xiǎoshí|giờ, tiếng đồng hồ
+起床|qǐchuáng|thức dậy
+睡觉|shuìjiào|đi ngủ
+上班|shàngbān|đi làm
+下班|xiàbān|tan làm
+上课|shàngkè|vào học, lên lớp
+下课|xiàkè|tan học
+早|zǎo|sớm
+一点儿|yìdiǎnr|một chút
+休息|xiūxi|nghỉ ngơi
+年|nián|năm
+月|yuè|tháng
+几个月|jǐ ge yuè|mấy tháng
+号/日|hào/rì|ngày (trong tháng)
+天|tiān|ngày, trời
+每|měi|mỗi, mọi
+什么时候|shénme shíhou|khi nào
+看|kàn|xem, nhìn
+和|hé|và, với
+吃|chī|ăn
+好吃|hǎochī|ngon
+饭|fàn|cơm
+吃饭|chīfàn|ăn cơm
+做|zuò|làm
+粉|fěn|bún, phở
+面包|miànbāo|bánh mì
+包子|bāozi|bánh bao
+火锅|huǒguō|lẩu
+烤肉|kǎoròu|thịt nướng
+炒饭|chǎofàn|cơm rang
+办公室|bàngōngshì|văn phòng
+会议室|huìyìshì|phòng họp
+车间|chējiān|xưởng sản xuất
+仓库|cāngkù|nhà kho
+厕所/洗手间|cèsuǒ/xǐshǒujiān|nhà vệ sinh
+门口|ménkǒu|cửa ra vào, cổng
+零|líng|không (số 0)
+房间|fángjiān|phòng
+楼|lóu|tầng, tòa nhà
+房子|fángzi|ngôi nhà
+客气|kèqi|khách sáo
+护照|hùzhào|hộ chiếu
+身份证|shēnfènzhèng|chứng minh thư, CCCD
+宾馆|bīnguǎn|nhà khách
+酒店|jiǔdiàn|khách sạn
+饭店|fàndiàn|nhà hàng, khách sạn
+住|zhù|ở (cư trú), trọ`.split('\n').map(l=>{const[h,p,v]=l.split('|');return{h,p,v}});
+
+/* ===== Tạo câu từ mẫu: chỉ dùng từ vựng bài 1–4, bài 5 và bài 8–11 ===== */
+const R=(a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296})(7);
+const sh0=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(R()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const X=(...a)=>a.reduce((r,l)=>r.flatMap(x=>l.map(y=>[...x,y])),[[]]);
+const N=['零','一','二','三','四','五','六','七','八','九','十'];
+const nt=n=>n<=10?N[n]:n<20?'十 '+N[n-10]:n%10?N[n/10|0]+' 十 '+N[n%10]:N[n/10|0]+' 十';
+const cap=s=>s[0].toUpperCase()+s.slice(1);
+const mk=(t,v)=>({t:t.replace('?','').split(' '),v,q:t.endsWith('?')});
+const Sb=[['我','tôi'],['你','bạn'],['他','anh ấy'],['她','cô ấy'],['我们','chúng tôi'],['他们','họ'],['老板','ông chủ'],['经理','giám đốc'],['主管','quản lý'],['秘书','thư ký'],['职员','nhân viên'],['工人','công nhân'],['司机','tài xế'],['学生','học sinh'],['老师','giáo viên']];
+const SC=['我','我们','他','她','他们','学生'];
+const PR={早上:'sáng',中午:'trưa',下午:'chiều',晚上:'tối'};
+const VB=[['起床','thức dậy','早上',[5,6,7]],['睡觉','đi ngủ','晚上',[9,10,11]],['上班','đi làm','早上',[7,8]],['下班','tan làm','下午',[4,5,6]],['吃饭','ăn cơm','中午',[11,12]],['开会','họp','下午',[2,3,4]],['上课','vào học','早上',[7,8]],['下课','tan học','中午',[11,12]]];
+const PLV={办公室:'văn phòng',会议室:'phòng họp',车间:'xưởng',仓库:'kho',饭店:'nhà hàng',家:'nhà',学校:'trường',银行:'ngân hàng',公司:'công ty',酒店:'khách sạn',宾馆:'nhà khách',洗手间:'nhà vệ sinh',超市:'siêu thị',市场:'chợ',商店:'cửa hàng',房间:'phòng',门口:'cửa ra vào'};
+const ACV={工作:'làm việc',休息:'nghỉ ngơi',开会:'họp',吃饭:'ăn cơm',学习:'học',上班:'đi làm',住:'trọ'};
+const FD=[['粉','bún/phở'],['面包','bánh mì'],['包子','bánh bao'],['火锅','lẩu'],['烤肉','thịt nướng'],['炒饭','cơm rang']];
+const MD=[['今天','hôm nay'],['明天','ngày mai'],['下午','buổi chiều'],['晚上','buổi tối'],['星期一','thứ hai'],['星期六','thứ bảy']];
+const MS=[3,5,8,10,12],DS=[5,10,15,20,28];
+const F=[];
+const add=(arr,n)=>F.push(...sh0(arr).slice(0,n));
+add(VB.flatMap(([v,vv,p,hs])=>X(v==='上课'||v==='下课'?Sb.filter(s=>SC.includes(s[0])):Sb,hs,[0,'h',10,20]).map(([s,h,m])=>mk(`${s[0]} ${p} ${nt(h)} 点${m==='h'?' 半':m?' '+nt(m)+' 分':''} ${v}`,`${cap(s[1])} ${vv} lúc ${h} giờ${m==='h'?' rưỡi':m?' '+m+' phút':''} ${PR[p]}`))),35);
+add(X(Sb,[['办公室','工作'],['办公室','休息'],['会议室','开会'],['车间','工作'],['仓库','工作'],['饭店','吃饭'],['家','休息'],['家','吃饭'],['家','学习'],['学校','学习'],['银行','工作'],['公司','上班'],['酒店','住'],['宾馆','住']]).map(([s,[p,a]])=>mk(`${s[0]} 在 ${p} ${a}`,`${cap(s[1])} ${ACV[a]} ở ${PLV[p]}`)),25);
+add(X(Sb,MD,['办公室','会议室','车间','仓库','洗手间','银行','超市','市场','学校','商店','饭店','酒店','宾馆','公司']).map(([s,m,p])=>mk(`${s[0]} ${m[0]} 要 去 ${p}`,`${cap(m[1])} ${s[1]} sẽ đến ${PLV[p]}`)),20);
+add(X(Sb,[['早上','buổi sáng'],['中午','buổi trưa'],['晚上','buổi tối'],['今天','hôm nay'],['明天','ngày mai'],['昨天','hôm qua']],FD).map(([s,m,f])=>mk(`${s[0]} ${m[0]} 吃 ${f[0]}`,`${cap(m[1])} ${s[1]} ăn ${f[1]}`)),12);
+add(X(Sb,FD,FD).filter(a=>a[1][0]!==a[2][0]).map(([s,a,b])=>mk(`${s[0]} 吃 ${a[0]} 和 ${b[0]}`,`${cap(s[1])} ăn ${a[1]} và ${b[1]}`)),8);
+add(FD.flatMap(f=>[mk(`${f[0]} 很 好吃`,`${cap(f[1])} rất ngon`),mk(`${f[0]} 真 好吃`,`${cap(f[1])} ngon thật`),mk(`${f[0]} 好吃 吗?`,`${cap(f[1])} có ngon không?`),mk(`这 个 ${f[0]} 太 好吃 了`,`${cap(f[1])} này ngon quá`)]),15);
+add(X(Sb.filter(s=>['我','你','他','她','老板','经理','秘书'].includes(s[0])),[['护照','hộ chiếu'],['身份证','CCCD'],['名片','danh thiếp']],['房间','办公室','会议室','家','车间','仓库','门口','公司']).map(([s,d,p])=>mk(`${s[0]} 的 ${d[0]} 在 ${p}`,`${cap(d[1])} của ${s[1]} ở ${PLV[p]}`)),10);
+add(['办公室','会议室','车间','仓库','洗手间','房间','银行','超市','饭店','酒店','宾馆','商店','市场'].map(p=>mk(`请 问 ${p} 在 哪儿?`,`Xin hỏi, ${PLV[p]} ở đâu?`)),8);
+add(X(MS,DS).map(([m,d])=>mk(`今天 ${nt(m)} 月 ${nt(d)} 号`,`Hôm nay là ngày ${d} tháng ${m}`)),5);
+add(X(Sb.slice(0,6),MS,DS,[['去 出差','đi công tác'],['回 家','về nhà'],['来 公司','đến công ty'],['开会','họp'],['休息','nghỉ ngơi']]).map(([s,m,d,a])=>mk(`${s[0]} ${nt(m)} 月 ${nt(d)} 号 ${a[0]}`,`${cap(s[1])} ${a[1]} vào ngày ${d} tháng ${m}`)),12);
+add(X(Sb,[['工作','làm việc'],['学习','học'],['休息','nghỉ ngơi'],['加班','tăng ca'],['开会','họp']],[1,3,4,5,6,8]).map(([s,v,n])=>mk(`${s[0]} 每 天 ${v[0]} ${nt(n)} 个 小时`,`${cap(s[1])} mỗi ngày ${v[1]} ${n} tiếng`)),10);
+add(X(Sb,[['酒店','khách sạn'],['宾馆','nhà khách'],['海防','Hải Phòng'],['这里','đây']]).map(([s,p])=>mk(`${s[0]} 住 在 ${p[0]}`,`${cap(s[1])} ${p[0]==='这里'||p[0]==='海防'?'ở':'ở'} ${p[1]}`)),7);
+add(X(Sb.slice(0,8).filter(s=>s[0]!=='主管'),[1,2,3,4,5,6,7,8]).map(([s,n])=>mk(`${s[0]} 的 房间 在 ${nt(n)} 楼`,`Phòng của ${s[1]} ở tầng ${n}`)),6);
+add(X(Sb,[['上班','đi làm'],['下班','tan làm'],['开会','họp'],['休息','nghỉ ngơi'],['出差','đi công tác'],['起床','thức dậy'],['睡觉','đi ngủ'],['加班','tăng ca'],['回 家','về nhà'],['去 学校','đến trường'],['来 公司','đến công ty'],['吃饭','ăn cơm']]).map(([s,v])=>mk(`${s[0]} 什么时候 ${v[0]}?`,`Khi nào ${s[1]} ${v[1]}?`)),15);
+add(X(Sb,[['今天','hôm nay'],['明天','ngày mai'],['星期一','thứ hai'],['星期三','thứ tư'],['星期五','thứ sáu'],['下午','chiều nay']],[['日本','Nhật Bản'],['中国','Trung Quốc'],['韩国','Hàn Quốc'],['英国','Anh'],['美国','Mỹ'],['台湾','Đài Loan'],['法国','Pháp'],['越南','Việt Nam']]).map(([s,m,d])=>mk(`${s[0]} ${m[0]} 坐 飞机 去 ${d[0]}`,`${cap(m[1])} ${s[1]} đi ${d[1]} bằng máy bay`)),18);
+const HAND=`今天 几 月 几 号?|Hôm nay là ngày mấy tháng mấy?
+明天 五 月 十 日 我 去 出差|Ngày 10 tháng 5 tôi đi công tác
+现在 几 点?|Bây giờ mấy giờ?
+现在 八 点 半|Bây giờ là 8 rưỡi
+你 几 点 上班?|Bạn mấy giờ đi làm?
+你 几 点 下班?|Bạn mấy giờ tan làm?
+你 每 天 几 点 起床?|Mỗi ngày bạn mấy giờ thức dậy?
+你 住 在 哪儿?|Bạn ở đâu?
+你 来 越南 几个月 了?|Bạn đến Việt Nam được mấy tháng rồi?
+我 在 公司 工作 三 年 了|Tôi làm ở công ty được 3 năm rồi
+我 出差 三 天|Tôi đi công tác 3 ngày
+这 周 我 每 天 加班|Tuần này ngày nào tôi cũng tăng ca
+我 的 房间 是 三 零 五|Phòng của tôi là 305
+谢谢 不 客气|Cảm ơn. Đừng khách sáo
+你 不 要 客气|Bạn đừng khách sáo
+我 看 一下 你 的 身份证 可以 吗?|Tôi xem CCCD của bạn một chút được không?
+你 早 一点儿 休息 吧|Bạn nghỉ sớm một chút đi
+我们 去 吃饭 吧|Chúng ta đi ăn cơm thôi
+你 看 我 的 名片|Bạn xem danh thiếp của tôi
+他 做 的 炒饭 很 好吃|Cơm rang anh ấy làm rất ngon
+火锅 和 烤肉 都 很 好吃|Lẩu và thịt nướng đều rất ngon
+他 的 房子 离 公司 很 近|Nhà của anh ấy cách công ty rất gần
+我 每 天 休息 二 十 分钟|Mỗi ngày tôi nghỉ 20 phút
+飞机 下午 三 点 半 去 海防|Máy bay 3 rưỡi chiều đi Hải Phòng`.split('\n').map(l=>{const[a,v]=l.split('|');return mk(a,v)});
+const seen=new Set();
+const S=[...F,...HAND].filter(s=>{const k=s.t.join('');if(seen.has(k))return false;seen.add(k);return true});
+
+/* ===== Ứng dụng ===== */
+const $=s=>document.querySelector(s),shuf=a=>[...a].sort(()=>Math.random()-.5);
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.split('/')[0].replace(/[()]/g,''));u.lang='zh-CN';u.rate=.8;const v=speechSynthesis.getVoices().find(x=>x.lang.replace('_','-').startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
+window.say=say;
+const T=[['list','📖 Danh sách'],['card','🃏 Flashcard'],['py','🎯 Hán → Pinyin'],['vi','🎯 Hán → Nghĩa'],['han','🎯 Nghĩa → Hán'],['sen','🧩 Ghép câu']];
+const nav=$('#nav');
+T.forEach(([k,n])=>{const b=document.createElement('button');b.textContent=n;b.dataset.k=k;b.onclick=()=>go(k);nav.appendChild(b)});
+function go(k){[...nav.children].forEach(b=>b.classList.toggle('on',b.dataset.k===k));({list,card,py:()=>quiz('py'),vi:()=>quiz('vi'),han:()=>quiz('han'),sen})[k]();window.scrollTo(0,0)}
+
+function list(){
+ $('#v').innerHTML=`<input class="s" id="q" placeholder="🔍 Tìm chữ Hán, pinyin hoặc nghĩa..."><div class="card tw"><table><thead><tr><th>#</th><th>Chữ Hán</th><th>Phiên âm</th><th>Nghĩa</th><th></th></tr></thead><tbody id="tb"></tbody></table></div>`;
+ const draw=f=>{$('#tb').innerHTML=D.map((w,i)=>({w,i})).filter(({w})=>!f||(w.h+w.p+w.v).toLowerCase().includes(f)).map(({w,i})=>`<tr><td class="mut">${i+1}</td><td class="h han">${w.h}</td><td class="p">${w.p}</td><td>${w.v}</td><td><button class="sp" onclick="say('${w.h}')">🔊</button></td></tr>`).join('')};
+ draw('');$('#q').oninput=e=>draw(e.target.value.trim().toLowerCase());
+}
+
+let deck=[],ci=0;
+function card(){if(!deck.length)deck=[...D];
+ const w=deck[ci],hs=w.h.split('/');
+ $('#v').innerHTML=`<div class="stat"><span>Thẻ ${ci+1}/${deck.length}</span><span>Bấm vào thẻ để lật</span></div>
+ <div class="fc" id="fc"><div class="fi"><div class="fs a"><div class="big han">${hs[0]}</div>${hs[1]?`<div class="han" style="font-size:1.4rem">${hs[1]}</div>`:''}</div><div class="fs b"><div style="font-size:2rem;font-weight:700">${w.p}</div><div style="font-size:1.4rem;margin-top:8px">${w.v}</div></div></div></div>
+ <div class="row"><button class="btn g" id="pv">◀ Trước</button><button class="sp" id="sd" style="width:46px;height:46px">🔊</button><button class="btn g" id="nx">Sau ▶</button></div>
+ <div class="row"><button class="btn" id="sh">🔀 Xáo trộn</button><button class="btn g" id="rs">↺ Theo thứ tự</button></div>`;
+ $('#fc').onclick=()=>$('#fc').classList.toggle('f');
+ $('#sd').onclick=()=>say(w.h);
+ $('#pv').onclick=()=>{ci=(ci-1+deck.length)%deck.length;card()};
+ $('#nx').onclick=()=>{ci=(ci+1)%deck.length;card()};
+ $('#sh').onclick=()=>{deck=shuf(D);ci=0;card()};
+ $('#rs').onclick=()=>{deck=[...D];ci=0;card()};
+}
+
+const M={py:{t:'Chọn phiên âm đúng',q:w=>w.h,a:w=>w.p,big:1},vi:{t:'Chọn nghĩa đúng',q:w=>w.h,a:w=>w.v,big:1},han:{t:'Chọn chữ Hán đúng',q:w=>w.v,a:w=>w.h,han:1}};
+let sc={score:0,total:0,streak:0};
+function quiz(k){
+ const m=M[k],w=D[Math.floor(Math.random()*D.length)],ans=m.a(w);
+ let o=[ans];for(const x of shuf(D)){const t=m.a(x);if(!o.includes(t))o.push(t);if(o.length==4)break}
+ o=shuf(o);
+ $('#v').innerHTML=`<div class="card"><div class="stat"><span>${m.t}</span><span>✅ ${sc.score}/${sc.total} · 🔥 ${sc.streak}</span></div>
+ <div class="q"><div class="${m.big?'big han':''}" style="${m.big?'':'font-size:1.8rem;font-weight:700'}">${m.q(w).split('/')[0]}</div>${m.big?`<button class="sp" style="margin-top:8px" onclick="say('${w.h}')">🔊</button>`:''}</div>
+ <div class="opts">${o.map(t=>`<button class="opt ${m.han?'han':''}" style="${m.han?'font-size:1.5rem':''}">${t}</button>`).join('')}</div>
+ <div class="msg" id="mg"></div><div class="row"><button class="btn" id="nx" style="display:none">Câu tiếp ▶</button></div></div>`;
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+  const ok=b.textContent===ans;sc.total++;ok?(sc.score++,sc.streak++):sc.streak=0;
+  document.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.textContent===ans)x.classList.add('ok')});
+  if(!ok)b.classList.add('no');
+  $('#mg').innerHTML=ok?'🎉 Chính xác!':`❌ Đáp án: ${w.h} · ${w.p} · ${w.v}`;
+  say(w.h);$('#nx').style.display='';$('#nx').onclick=()=>quiz(k);
+ });
+}
+
+let si=0,order=[];
+function sen(){
+ if(!order.length)order=shuf(S.map((_,i)=>i));
+ const s=S[order[si%order.length]];let toks=shuf(s.t.map((t,i)=>({t,i})));
+ let ans=[];
+ $('#v').innerHTML=`<div class="card"><div class="stat"><span>Câu ${si%order.length+1}/${order.length}</span><span>Chỉ dùng từ vựng đã học</span></div>
+ <div class="q"><div class="mut" style="font-size:.9rem">Ghép thành câu đúng:</div><div style="font-size:1.3rem;font-weight:700;margin-top:6px">${s.v}</div></div>
+ <div class="zone" id="zn"></div><div class="row" id="pool" style="margin-top:0"></div>
+ <div class="msg" id="mg"></div>
+ <div class="row"><button class="btn g" id="rs">↺ Làm lại</button><button class="btn g" id="xt">🔀 Xáo từ</button><button class="btn" id="ck">Kiểm tra</button></div>
+ <div class="row"><button class="btn g" id="nx">Câu khác ▶</button></div></div>`;
+ const draw=()=>{
+  $('#zn').innerHTML=ans.map(a=>`<button class="tk han" data-i="${a.i}" data-w="1">${a.t}</button>`).join('');
+  $('#pool').innerHTML=toks.filter(x=>!ans.includes(x)).map(x=>`<button class="tk han" data-i="${x.i}">${x.t}</button>`).join('');
+  document.querySelectorAll('.tk').forEach(b=>b.onclick=()=>{const x=toks.find(t=>t.i==b.dataset.i);if(b.dataset.w)ans=ans.filter(a=>a!==x);else{ans.push(x);say(x.t)}draw()});
+ };draw();
+ const full=s.t.join('')+(s.q?'？':'。');
+ $('#rs').onclick=()=>{ans=[];draw();$('#mg').textContent=''};
+ $('#xt').onclick=()=>{toks=shuf(toks);draw()};
+ $('#ck').onclick=()=>{
+  const ok=ans.length===s.t.length&&ans.every((a,i)=>a.t===s.t[i]);
+  $('#mg').innerHTML=ok?`🎉 Chính xác!<br><span class="han" style="font-size:1.4rem">${full}</span>`:`❌ Chưa đúng<div class="ref">💡 Đáp án tham khảo:<br><span class="han" style="font-size:1.4rem">${s.t.join(' ')}${s.q?' ？':' 。'}</span></div>`;
+  say(s.t.join(''));
+ };
+ $('#nx').onclick=()=>{si++;sen()};
+}
+go('list');
+</script>
+</body>
+</html>
